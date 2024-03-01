@@ -31,7 +31,7 @@ public_users.get('/', async(req, res) => {
 // Get book details based on ISBN
 public_users.get('/isbn/:isbn', async(req, res) => {
     try {
-        return res.status(200).send(JSON.stringify(books[req.params.isbn]));
+        return res.status(200).send(JSON.stringify(books[req.params.isbn], null, 3));
     } catch (error) {
         return res.status(500).json({message: error.message});
     }
